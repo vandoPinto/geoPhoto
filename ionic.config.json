@@ -1,0 +1,7 @@
+{
+  "name": "geoPhoto",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
