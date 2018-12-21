@@ -96,9 +96,10 @@ export class HomePage {
       '</div>' +
       '<h1 id="firstHeading" class="firstHeading">Sua Localização</h1>' +
       '<div id="bodyContent">' +
-      '<p><b>Coordenadas: Latitude :</b>' + this.currentCoords.lat + '<p>' +
-      '<p><b>Longitude :</b>' + this.currentCoords.long + '<p>' +
-      '<p><b>Hora :</b>' + new Date().toLocaleTimeString() + '<p>' +
+      '<p><b>Coordenadas: </b></p>'+
+      '<p><b>Latitude : </b>' + this.currentCoords.lat + '<p>' +
+      '<p><b>Longitude : </b>' + this.currentCoords.long + '<p>' +
+      '<p><b>Data/Hora : </b>' + new Date().toLocaleString() + '<p>' +
       '</p>' +
       '</div>' +
       '</div>';
@@ -118,7 +119,7 @@ export class HomePage {
 
       htmlInfoWindow.setContent(contentString, {
         width: "260px",
-        height: "150px"
+        height: "180px"
       });
 
       marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
@@ -129,7 +130,7 @@ export class HomePage {
     let parametros = {
       long: this.currentCoords.long,
       lat: this.currentCoords.lat,
-      hora: new Date().toLocaleTimeString(),
+      hora: new Date().toLocaleString(),
       imagem: foto
     }
     this.saveInDB(parametros);
